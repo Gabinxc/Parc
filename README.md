@@ -137,6 +137,37 @@ Tables :
 - `review(review_id, attraction_id, nom, prenom, note, commentaire, date_creation)`
 	- FK `review.attraction_id → attraction.attraction_id` (ON DELETE CASCADE)
 
+#### Schéma (ERD)
+
+```mermaid
+erDiagram
+	ATTRACTION {
+		INT attraction_id PK
+		VARCHAR nom
+		VARCHAR description
+		INT difficulte
+		BOOL visible
+	}
+
+	USERS {
+		INT users_id PK
+		VARCHAR name
+		VARCHAR password
+	}
+
+	REVIEW {
+		INT review_id PK
+		INT attraction_id FK
+		VARCHAR nom
+		VARCHAR prenom
+		INT note
+		TEXT commentaire
+		DATETIME date_creation
+	}
+
+	ATTRACTION ||--o{ REVIEW : "has"
+```
+
 Connexion DB (depuis le host) :
 
 ```bash
