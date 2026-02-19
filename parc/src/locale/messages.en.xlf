@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+
+      <!-- index.html -->
+      <trans-unit id="parc-title" datatype="html">
+        <source>Parc d'Attractions</source>
+        <target>Amusement Park</target>
+      </trans-unit>
+
+      <!-- app.component.html -->
+      <trans-unit id="nav-home" datatype="html">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="nav-admin" datatype="html">
+        <source>Admin</source>
+        <target>Admin</target>
+      </trans-unit>
+      <trans-unit id="nav-logout" datatype="html">
+        <source>Déconnexion</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="nav-login" datatype="html">
+        <source>Connexion</source>
+        <target>Login</target>
+      </trans-unit>
+
+      <!-- accueil.component.html -->
+      <trans-unit id="accueil-title" datatype="html">
+        <source>Nos Attractions</source>
+        <target>Our Attractions</target>
+      </trans-unit>
+      <trans-unit id="accueil-subtitle" datatype="html">
+        <source>Découvrez toutes nos attractions et partagez votre expérience !</source>
+        <target>Discover all our attractions and share your experience!</target>
+      </trans-unit>
+      <trans-unit id="accueil-difficulty" datatype="html">
+        <source>Difficulté :</source>
+        <target>Difficulty:</target>
+      </trans-unit>
+      <trans-unit id="accueil-reviews-btn" datatype="html">
+        <source>Voir les critiques</source>
+        <target>See reviews</target>
+      </trans-unit>
+
+      <!-- login.component.html -->
+      <trans-unit id="login-title" datatype="html">
+        <source>Espace Administrateur</source>
+        <target>Admin Area</target>
+      </trans-unit>
+      <trans-unit id="login-subtitle" datatype="html">
+        <source>Connectez-vous pour accéder au panneau d'administration</source>
+        <target>Log in to access the administration panel</target>
+      </trans-unit>
+      <trans-unit id="login-username" datatype="html">
+        <source>Nom d'utilisateur</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="login-password" datatype="html">
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="login-submit" datatype="html">
+        <source>Se connecter</source>
+        <target>Sign in</target>
+      </trans-unit>
+
+      <!-- review-dialog.component.html -->
+      <trans-unit id="review-dialog-title" datatype="html">
+        <source>Critiques - <x id="INTERPOLATION" equiv-text="{{ data.attraction.nom }}"/></source>
+        <target>Reviews - <x id="INTERPOLATION" equiv-text="{{ data.attraction.nom }}"/></target>
+      </trans-unit>
+      <trans-unit id="review-count" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ avg.count }}"/> critique(s)</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ avg.count }}"/> review(s)</target>
+      </trans-unit>
+      <trans-unit id="review-leave" datatype="html">
+        <source>Laisser une critique</source>
+        <target>Leave a review</target>
+      </trans-unit>
+      <trans-unit id="review-anonymous" datatype="html">
+        <source>Rester anonyme</source>
+        <target>Stay anonymous</target>
+      </trans-unit>
+      <trans-unit id="review-field-name" datatype="html">
+        <source>Nom</source>
+        <target>Last name</target>
+      </trans-unit>
+      <trans-unit id="review-field-firstname" datatype="html">
+        <source>Prénom</source>
+        <target>First name</target>
+      </trans-unit>
+      <trans-unit id="review-field-note" datatype="html">
+        <source>Note (1-5)</source>
+        <target>Rating (1-5)</target>
+      </trans-unit>
+      <trans-unit id="review-field-comment" datatype="html">
+        <source>Votre commentaire</source>
+        <target>Your comment</target>
+      </trans-unit>
+      <trans-unit id="review-submit" datatype="html">
+        <source>Envoyer</source>
+        <target>Send</target>
+      </trans-unit>
+      <trans-unit id="review-existing" datatype="html">
+        <source>Critiques existantes</source>
+        <target>Existing reviews</target>
+      </trans-unit>
+      <trans-unit id="review-no-reviews" datatype="html">
+        <source>Aucune critique pour le moment. Soyez le premier à donner votre avis !</source>
+        <target>No reviews yet. Be the first to share your opinion!</target>
+      </trans-unit>
+      <trans-unit id="review-close" datatype="html">
+        <source>Fermer</source>
+        <target>Close</target>
+      </trans-unit>
+
+      <!-- admin.component.html -->
+      <trans-unit id="admin-page-title" datatype="html">
+        <source>Page administrateur pour</source>
+        <target>Administrator page to</target>
+      </trans-unit>
+      <trans-unit id="admin-add" datatype="html">
+        <source>Ajouter</source>
+        <target>Add</target>
+      </trans-unit>
+      <trans-unit id="admin-page-title-suffix" datatype="html">
+        <source>, modifier et supprimer des attractions</source>
+        <target>, edit and delete attractions</target>
+      </trans-unit>
+      <trans-unit id="admin-col-name" datatype="html">
+        <source>Nom de l'attraction</source>
+        <target>Attraction name</target>
+      </trans-unit>
+      <trans-unit id="admin-col-desc" datatype="html">
+        <source>Description de l'attraction</source>
+        <target>Attraction description</target>
+      </trans-unit>
+      <trans-unit id="admin-col-diff" datatype="html">
+        <source>Difficulté de l'attraction / 5</source>
+        <target>Attraction difficulty / 5</target>
+      </trans-unit>
+      <trans-unit id="admin-col-visible" datatype="html">
+        <source>Visible</source>
+        <target>Visible</target>
+      </trans-unit>
+      <trans-unit id="admin-field-name" datatype="html">
+        <source>Nom</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="admin-field-desc" datatype="html">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="admin-field-diff" datatype="html">
+        <source>Difficulté / 5</source>
+        <target>Difficulty / 5</target>
+      </trans-unit>
+      <trans-unit id="admin-field-visible" datatype="html">
+        <source>Element visible</source>
+        <target>Visible</target>
+      </trans-unit>
+      <trans-unit id="admin-save" datatype="html">
+        <source>Enregistrer</source>
+        <target>Save</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,19 +1,123 @@
-.attraction-title {
-  font-size: 18px;
-  font-weight: 500;
-  background-color: darkgrey;
-  width: fit-content;
-  margin-top: 25px;
-}
-.attraction {
-  display: flex;
-  align-items: center;
-  column-gap: 25px;
-  width: fit-content;
+.page-header {
+  text-align: center;
+  margin-bottom: 36px;
 
-  border-bottom: solid 1px grey;
-  span {
-    padding: 5px;
-    width: 250px;
+  .page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 8px 0;
+
+    .title-icon {
+      font-size: 36px;
+      width: 36px;
+      height: 36px;
+      color: var(--accent);
+    }
+  }
+
+  .page-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.attraction-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(92, 53, 212, 0.2);
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .card-icon {
+      color: #ffd700;
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .card-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+    flex: 1;
+
+    .card-description {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+    }
+
+    .card-difficulty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .difficulty-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-muted);
+      }
+
+      .difficulty-stars { display: flex; gap: 2px; }
+
+      .star {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        &.filled { color: #ffc107; }
+        &.empty { color: #ddd; }
+      }
+
+      .difficulty-value {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+    }
+  }
+
+  .card-footer {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+
+    .review-btn {
+      font-weight: 600;
+      border-radius: 8px;
+      mat-icon { vertical-align: middle; font-size: 18px; margin-right: 4px; }
+    }
   }
 }

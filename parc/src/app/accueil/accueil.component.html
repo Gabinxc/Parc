@@ -1,24 +1,32 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="attraction-title">
-      <div class="attraction">
-        <span>Nom de l'attraction</span>
-        <span>Description de l'attraction</span>
-        <span>Difficulté de l'attraction / 5</span>
+<div class="page-header">
+  <h1 class="page-title">
+    <mat-icon class="title-icon">attractions</mat-icon>
+    <span i18n="@@accueil-title">Nos Attractions</span>
+  </h1>
+  <p class="page-subtitle" i18n="@@accueil-subtitle">Découvrez toutes nos attractions et partagez votre expérience !</p>
+</div>
+
+<div class="attractions-grid">
+  <div class="attraction-card" *ngFor="let attraction of attractions | async">
+    <div class="card-header">
+      <mat-icon class="card-icon">roller_skating</mat-icon>
+      <h2 class="card-title">{{ attraction.nom }}</h2>
+    </div>
+    <div class="card-body">
+      <p class="card-description">{{ attraction.description }}</p>
+      <div class="card-difficulty">
+        <span class="difficulty-label" i18n="@@accueil-difficulty">Difficulté :</span>
+        <div class="difficulty-stars">
+          <mat-icon *ngFor="let s of getDifficultyStars(attraction.difficulte)" class="star filled">star</mat-icon>
+          <mat-icon *ngFor="let s of getDifficultyEmpty(attraction.difficulte)" class="star empty">star_border</mat-icon>
+        </div>
+        <span class="difficulty-value">{{ attraction.difficulte }}/5</span>
       </div>
     </div>
-    <ng-container *ngFor="let attraction of attractions | async;">
-      <div class="attraction">
-        <span>{{attraction.nom}}</span>
-        <span>{{attraction.description}}</span>
-        <span>{{attraction.difficulte}} / 5</span>
-        <button mat-button color="primary" (click)="openReviewDialog(attraction)">
-          <mat-icon>rate_review</mat-icon> Critiques
-        </button>
-      </div>
-    </ng-container>
-  </mat-card-content>
-</mat-card>
+    <div class="card-footer">
+      <button mat-raised-button color="primary" (click)="openReviewDialog(attraction)" class="review-btn">
+        <mat-icon>rate_review</mat-icon> <span i18n="@@accueil-reviews-btn">Voir les critiques</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -23,6 +23,9 @@ export class AccueilComponent {
   
   public attractions: Observable<AttractionInterface[]> = this.attractionService.getAllVisibleAttraction();
 
+  getDifficultyStars(n: number): number[] { return Array(Math.min(n, 5)).fill(0); }
+  getDifficultyEmpty(n: number): number[] { return Array(Math.max(5 - n, 0)).fill(0); }
+
   openReviewDialog(attraction: AttractionInterface): void {
     this.dialog.open(ReviewDialogComponent, {
       width: '700px',

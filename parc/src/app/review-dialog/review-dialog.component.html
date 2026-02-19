@@ -1,6 +1,6 @@
 <h2 mat-dialog-title class="dialog-title">
   <mat-icon class="title-icon">rate_review</mat-icon>
-  Critiques - {{ data.attraction.nom }}
+  <span i18n="@@review-dialog-title">Critiques - {{ data.attraction.nom }}</span>
 </h2>
 
 <mat-dialog-content class="dialog-content">
@@ -14,50 +14,50 @@
       <mat-icon *ngFor="let s of getStars(avg.average)" class="star filled">star</mat-icon>
       <mat-icon *ngFor="let s of getEmptyStars(avg.average)" class="star empty">star_border</mat-icon>
     </div>
-    <span class="review-count">{{ avg.count }} critique(s)</span>
+    <span class="review-count" i18n="@@review-count">{{ avg.count }} critique(s)</span>
   </div>
 
   <hr class="divider">
 
   <!-- Formulaire -->
-  <h3 class="section-title">Laisser une critique</h3>
+  <h3 class="section-title" i18n="@@review-leave">Laisser une critique</h3>
   <form [formGroup]="reviewForm" (ngSubmit)="submitReview()" class="review-form">
     <div class="anonymous-toggle">
-      <mat-slide-toggle formControlName="anonymous" (change)="toggleAnonymous()">
+      <mat-slide-toggle formControlName="anonymous" (change)="toggleAnonymous()" i18n="@@review-anonymous">
         Rester anonyme
       </mat-slide-toggle>
     </div>
 
     <div class="name-fields" *ngIf="!reviewForm.get('anonymous')?.value">
       <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
+        <mat-label i18n="@@review-field-name">Nom</mat-label>
         <input matInput formControlName="nom">
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Prénom</mat-label>
+        <mat-label i18n="@@review-field-firstname">Prénom</mat-label>
         <input matInput formControlName="prenom">
       </mat-form-field>
     </div>
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Note (1-5)</mat-label>
+      <mat-label i18n="@@review-field-note">Note (1-5)</mat-label>
       <input matInput formControlName="note" type="number" min="1" max="5">
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Votre commentaire</mat-label>
+      <mat-label i18n="@@review-field-comment">Votre commentaire</mat-label>
       <textarea matInput formControlName="commentaire" rows="3"></textarea>
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit" [disabled]="!reviewForm.valid" class="submit-btn">
-      <mat-icon>send</mat-icon> Envoyer
+      <mat-icon>send</mat-icon> <span i18n="@@review-submit">Envoyer</span>
     </button>
   </form>
 
   <hr class="divider">
 
   <!-- Liste des critiques -->
-  <h3 class="section-title">Critiques existantes</h3>
+  <h3 class="section-title" i18n="@@review-existing">Critiques existantes</h3>
   <div class="reviews-list">
     <div *ngFor="let review of reviews$ | async" class="review-card">
       <div class="review-header">
@@ -74,11 +74,11 @@
     </div>
     <div *ngIf="(reviews$ | async)?.length === 0" class="no-reviews">
       <mat-icon>info</mat-icon>
-      Aucune critique pour le moment. Soyez le premier à donner votre avis !
+      <span i18n="@@review-no-reviews">Aucune critique pour le moment. Soyez le premier à donner votre avis !</span>
     </div>
   </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button (click)="close()">Fermer</button>
+  <button mat-button (click)="close()" i18n="@@review-close">Fermer</button>
 </mat-dialog-actions>

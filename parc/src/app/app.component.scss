@@ -1,5 +1,87 @@
-mat-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 24px;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .brand-icon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+      color: #ffd700;
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 16px;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+
+    mat-icon { vertical-align: middle; margin-right: 4px; font-size: 18px; }
+
+    &:hover { color: white; background: rgba(255,255,255,0.15); border-radius: 4px; }
+  }
+
+  .lang-btn {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+  margin-right: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  mat-icon { margin-right: 4px; }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: white;
+  }
+}
+
+.logout-btn {
+    color: white;
+    border-color: rgba(255,255,255,0.5);
+    font-weight: 500;
+
+    mat-icon { vertical-align: middle; margin-right: 4px; font-size: 18px; }
+
+    &:hover { background: rgba(255,255,255,0.15); }
+  }
+}
+
+.page-content {
+  padding: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }

@@ -1,18 +1,26 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Connexion à la page administrateur</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form [formGroup]="form" (ngSubmit)="login()" class="formulaire">
-      <mat-form-field appearance="fill">
-        <mat-label>Nom</mat-label>
-        <input matInput formControlName="name">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Mot de passe</mat-label>
-        <input matInput formControlName="password">
-      </mat-form-field>
-      <button mat-stroked-button type="submit">Connexion</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="login-wrapper">
+  <mat-card class="login-card">
+    <div class="login-header">
+      <mat-icon class="login-icon">lock</mat-icon>
+      <h2 class="login-title" i18n="@@login-title">Espace Administrateur</h2>
+      <p class="login-sub" i18n="@@login-subtitle">Connectez-vous pour accéder au panneau d'administration</p>
+    </div>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="login()" class="formulaire">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label i18n="@@login-username">Nom d'utilisateur</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label i18n="@@login-password">Mot de passe</mat-label>
+          <mat-icon matPrefix>key</mat-icon>
+          <input matInput formControlName="password" type="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="login-btn">
+          <mat-icon>login</mat-icon> <span i18n="@@login-submit">Se connecter</span>
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

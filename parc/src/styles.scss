@@ -1,4 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+:root {
+  --primary: #5c35d4;
+  --primary-dark: #3d1fa8;
+  --primary-light: #7c5ce4;
+  --accent: #ff6b6b;
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --shadow: 0 4px 20px rgba(92, 53, 212, 0.12);
+}

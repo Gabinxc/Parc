@@ -12,6 +12,23 @@ services:
     volumes:
       - ./parc:/home/node/app
     ports: ["4200:4200"]
+    environment:
+      - LOCALE=${LOCALE:-fr}
+    restart: always
+
+  web-en:
+    image: app-angular
+    build:
+      context: ./parc
+      args:
+        MY_UID: ${MY_UID:-0}
+        MY_GID: ${MY_GID:-0}
+    command: ./init-angular.sh
+    volumes:
+      - ./parc:/home/node/app
+    ports: ["4201:4200"]
+    environment:
+      - LOCALE=en
     restart: always
 
   api:
@@ -55,6 +72,8 @@ services:
       api:
         condition: service_healthy
       web:
+        condition: service_started
+      web-en:
         condition: service_started
     restart: always
 

@@ -1,8 +1,39 @@
-<mat-toolbar>
-  <span><a routerLink="/accueil">Parc d'attraction</a></span>
-  <div *ngIf="authService.isLoggedIn">
-    <button mat-stroked-button (click)="logout()">Déconnexion</button>
+<mat-toolbar class="navbar">
+  <div class="navbar-brand">
+    <mat-icon class="brand-icon">park</mat-icon>
+    <a routerLink="/accueil" class="brand-name">ParcAttraction</a>
+  </div>
+
+  <div class="navbar-nav">
+    <a routerLink="/accueil" mat-button class="nav-link">
+      <mat-icon>home</mat-icon> <span i18n="@@nav-home">Accueil</span>
+    </a>
+    <ng-container *ngIf="authService.isLoggedIn">
+      <a routerLink="/admin" mat-button class="nav-link">
+        <mat-icon>admin_panel_settings</mat-icon> <span i18n="@@nav-admin">Admin</span>
+      </a>
+    </ng-container>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="navbar-right">
+    <button mat-stroked-button class="lang-btn" (click)="toggleLanguage()">
+      <mat-icon>language</mat-icon> {{ currentLang === 'fr' ? 'EN' : 'FR' }}
+    </button>
+    <ng-container *ngIf="authService.isLoggedIn; else loginBtn">
+      <button mat-stroked-button class="logout-btn" (click)="logout()">
+        <mat-icon>logout</mat-icon> <span i18n="@@nav-logout">Déconnexion</span>
+      </button>
+    </ng-container>
+    <ng-template #loginBtn>
+      <a routerLink="/login" mat-button class="nav-link">
+        <mat-icon>login</mat-icon> <span i18n="@@nav-login">Connexion</span>
+      </a>
+    </ng-template>
   </div>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div class="page-content">
+  <router-outlet></router-outlet>
+</div>
