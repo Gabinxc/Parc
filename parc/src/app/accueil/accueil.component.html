@@ -15,6 +15,9 @@
         <span>{{attraction.nom}}</span>
         <span>{{attraction.description}}</span>
         <span>{{attraction.difficulte}} / 5</span>
+        <button mat-button color="primary" (click)="openReviewDialog(attraction)">
+          <mat-icon>rate_review</mat-icon> Critiques
+        </button>
       </div>
     </ng-container>
   </mat-card-content>

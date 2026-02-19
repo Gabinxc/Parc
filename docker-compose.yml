@@ -22,6 +22,12 @@ services:
       - ./python:/var/www/html/back
     ports: ["5000:5000"]
     restart: always
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/')"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 30s
     depends_on:
       - database
 
@@ -46,8 +52,10 @@ services:
     ports:
       - "443:443"
     depends_on:
-      - web
-      - api
+      api:
+        condition: service_healthy
+      web:
+        condition: service_started
     restart: always
 
 volumes:

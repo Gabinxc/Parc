@@ -3,6 +3,7 @@ from flask import Flask, jsonify, request
 import request.request as req
 import controller.auth.auth as user
 import controller.attraction as attraction
+import controller.review as review
 
 app = Flask(__name__)
 
@@ -53,6 +54,26 @@ def deleteAttraction(index):
     if (attraction.delete_attraction(index)):
         return "Element supprimé.", 200
     return jsonify({"message": "Erreur lors de la suppression."}), 500
+
+# Reviews
+@app.post('/attraction/<int:index>/reviews')
+def addReview(index):
+    json = request.get_json()
+    json['attraction_id'] = index
+    retour = review.add_review(json)
+    if retour:
+        return jsonify({"message": "Critique ajout\u00e9e.", "result": retour}), 200
+    return jsonify({"message": "Erreur lors de l'ajout."}), 500
+
+@app.get('/attraction/<int:index>/reviews')
+def getReviews(index):
+    result = review.get_reviews(index)
+    return jsonify(result), 200
+
+@app.get('/attraction/<int:index>/reviews/average')
+def getAverageReview(index):
+    result = review.get_average_rating(index)
+    return jsonify(result), 200
 
 @app.post('/login')
 def login():
