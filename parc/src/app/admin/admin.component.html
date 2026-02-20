@@ -33,7 +33,7 @@
   
           <mat-form-field class="champ" appearance="fill">
             <mat-label i18n="@@admin-field-diff">Difficulté / 5</mat-label>
-            <input matInput formControlName="difficulte" type="number">
+            <input matInput formControlName="difficulte" type="number" min="0" max="5">
           </mat-form-field>
 
           <mat-slide-toggle class="champ" formControlName="visible" i18n="@@admin-field-visible">Element visible</mat-slide-toggle>
